@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Body bgcolor Attribute example</title>
+    <script>
+        function doAction(){
+            var elem = document.getElementById("tswhamburger");
+            if (elem.innerHTML=="Close Curtain") elem.innerHTML = "Open Curtain";
+            else elem.innerHTML = "Close Curtain";
+            JSBridge.showToast("Toast from WebView");
+            JSBridge.unRegisterBackPressedCallback("backButtonPressed2")
+            console.log("This is a log from WebView!")
+        }
+
+        function backButtonPressed(){
+            JSBridge.showToast("Back pressed!");
+        }
+
+        function backButtonPressed2(){
+            JSBridge.showToast("Back pressed 2nd handler!");
+        }
+
+        JSBridge.showToast("Hello from WebView");
+        JSBridge.registerBackPressedCallback("backButtonPressed")
+        JSBridge.registerBackPressedCallback("backButtonPressed2")
+    </script>
+</head>
+<body bgcolor="#afafaf">
+<h1>This webpage has originally has gray colored background.</h1>
+
+<button type="button" id="tswhamburger" onclick="doAction()" >Do Action</button>
+<button type="button" id="tswhamburger2" onclick="doAction()">We Action</button>
+<button type="button" id="tswhamburger3" onclick="doAction()">Lol Action</button>
+
+
+</body>
+</html>

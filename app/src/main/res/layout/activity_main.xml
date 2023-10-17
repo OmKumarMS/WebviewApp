@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:endIconDrawable="@drawable/baseline_clear_24"
+        app:endIconMode="clear_text"
+        android:paddingVertical="8dp"
+        android:id="@+id/urlEditTextLayout"
+        app:placeholderText="Enter url"
+        android:hint="WebView URL"
+        android:paddingHorizontal="16dp"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/goBtn"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/urlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goBtn"
+        app:fabSize="mini"
+        android:src="@drawable/baseline_search_24"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/urlEditTextLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/urlEditTextLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <WebView
+        app:layout_constraintTop_toBottomOf="@id/urlEditTextLayout"
+        android:id="@+id/webView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:importantForAccessibility="yes"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:descendantFocusability="afterDescendants"
+        android:screenReaderFocusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="250dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
